@@ -13,6 +13,12 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <router-link :to="{
+          name: 'newPage'
+        }">newPage</router-link>
+        <router-link to="/newPage/namedView/ac">ac</router-link>
+        <router-link to="/newPage/namedView/ab">ab</router-link>
+        <router-link to="/newPage/dynamic">dynamic</router-link>
       </nav>
     </div>
   </header>

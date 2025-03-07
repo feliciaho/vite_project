@@ -17,6 +17,54 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/newPage',
+      name: 'newPage',
+      component: () => import('../views/NewPage.vue'),
+      children: [
+        {
+          path: 'a',
+          component: () => import('../views/NewPageA.vue'),
+        },
+        {
+          path: 'b',
+          component: () => import('../views/NewPageB.vue'),
+        },
+        {
+          path: 'dynamic/:id',
+          component: ()=> import('../views/DynamicRouter.vue'),
+        },
+        {
+          path: 'dynamicProps/:id',
+          component: ()=> import('../views/DynamicRouterProps.vue'),
+          props: (el)=>{
+            return {
+              id:el.params.id,
+            }
+          }
+        },
+        {
+          path: 'namedView',
+          component: () => import('../views/NamedView.vue'),
+          children: [
+            {
+              path: 'ac',
+              components: {
+                first: () => import('../views/NewPageA.vue'),
+                second: () => import('../views/NewPageC.vue'),
+              },
+            },
+            {
+              path: 'ab',
+              components: {
+                first: () => import('../views/NewPageA.vue'),
+                second: () => import('../views/NewPageB.vue'),
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 })
 
