@@ -3,6 +3,18 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'active',
+  scrollBehavior(to, from ,savedPosition){
+    // to 去哪的路由網址
+    // from 從哪來的路由網址
+    // savedPosition {top: 0} 之類的可記錄scroll位置
+    if(to.fullPath.match('newPage')){
+      return{
+        top: 50,
+      }
+    };
+    console.log(to, from ,savedPosition)
+  },
   routes: [
     {
       path: '/',
@@ -65,6 +77,18 @@ const router = createRouter({
         },
       ],
     },
+    // 404頁面
+    {
+      path: '/:pathMatch(.*)*',
+      component: () =>import('../views/NotFound.vue'),
+    },
+    // 重新導向
+    // {
+    //   path: '/newPage/:pathMatch(.*)*',
+    //   redirect:{
+    //     name:'home'
+    //   }
+    // }
   ],
 })
 
