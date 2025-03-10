@@ -63,6 +63,10 @@ const router = createRouter({
             },
           ],
         },
+        {
+          path: 'routerNavigation',
+          component: ()=> import("../views/RouterNavigation.vue"),
+        }
       ],
     },
   ],

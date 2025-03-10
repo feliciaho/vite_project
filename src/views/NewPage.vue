@@ -1,8 +1,8 @@
 <template>
   <div>選單
     <div>
-      <router-link to="NewPage/a">a</router-link>
-      <router-link to="NewPage/b">b</router-link>
+      <router-link to="/newPage/a">a</router-link>
+      <router-link to="/newPage/b">b</router-link>
     </div>
   </div>
   <div>

@@ -19,6 +19,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <router-link to="/newPage/namedView/ac">ac</router-link>
         <router-link to="/newPage/namedView/ab">ab</router-link>
         <router-link to="/newPage/dynamic">dynamic</router-link>
+        <router-link to="/newPage/routerNavigation">routerNavigation</router-link>
+
       </nav>
     </div>
   </header>
