@@ -15,6 +15,8 @@
   export default {
   // 帶入state或是getters
     computed:{
+      // mapState 用來取得state
+      // mapActions 用來取得actions
       ...mapState(userStore, ['name', 'getUserName']),
       ...mapActions(userStore, ['updateName'])
     }
